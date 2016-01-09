@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A faster and simpler antigen written in Golang">
+  <meta name="author" content="Carlos Alexandro Becker">
+  <meta name="keywords" content="zsh,shell,antigen,antibody">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="antibody">
+  <meta property="og:description" content="A faster and simpler antigen written in Golang">
+  <meta property="og:url" content="http://carlosbecker.com/posts/go-antibody">
+  <meta property="og:site_name" content="antibody">
+
+  <title>antibody</title>
+  <link rel="stylesheet" type="text/css"
+    href="//yegor256.github.io/tacit/tacit.min.css"/>
+  <link rel="stylesheet" type="text/css"
+    href="//cdn.jsdelivr.net/font-hack/2.010/css/hack.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/index.css/">
+</head>
+<body>
+  <img align="right" width="20%" alt="logo" src="//raw.githubusercontent.com/getantibody/antibody/master/logo.png"/>
+  <h1>
+    Antibody
+    <small>A faster and simpler antigen written in Golang.</small>
+  </h1>
+  <p>
+    <iframe src="//ghbtns.com/github-btn.html?user=getantibody&repo=antibody&type=star&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+    <iframe src="//ghbtns.com/github-btn.html?user=getantibody&repo=antibody&type=fork&count=true" frameborder="0" scrolling="0" width="80px" height="20px"></iframe>
+    <iframe src="//ghbtns.com/github-btn.html?user=getantibody&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+  </p>
+  <p>
+    You can download, extract it somewhere and source the
+    <code>antibody.zsh</code> file from
+    <a href="https://github.com/getantibody/antibody/releases">here</a>
+    and then script it somewhere:
+  </p>
+  <pre>
+    <code>
+$ mkdir /somewhere/antibody
+$ tar xzvf antibody.tar.gz -C /somewhere/antibody
+$ source /somewhere/antibody/antibody.zsh
+$ antibody
+    </code>
+  </pre>
+  <p>
+    On OSX (or Linux if you use linuxbrew), you can install it using a
+    <a href="https://github.com/getantibody/homebrew-antibody">homebrew tap</a>:
+  </p>
+  <pre>
+    <code>
+$ brew tap getantibody/homebrew-antibody
+$ brew install antibody
+$ source "$(brew --prefix)/share/antibody.zsh"
+$ antibody
+    </code>
+  </pre>
+  <p>
+    You can also always find more info in the
+    <a href="https://github.com/getantibody/antibody/blob/master/README.md">
+      readme.
+    </a>
+  </p>
+  <hr/>
+  <p>Made with &hearts; by <a href="https://carlosbecker.com/about">@caarlos0</a>.</p>
+  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="caarlos0@gmail.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="caarlos0">
+    <input type="hidden" name="item_number" value="antibody">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+  </form>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-68164063-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
