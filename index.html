@@ -36,28 +36,24 @@
     <script type="text/javascript" src="https://asciinema.org/a/33962.js" id="asciicast-33962" async></script>
   </p>
   <p>
-    You can download, extract it somewhere and source the
-    <code>antibody.zsh</code> file from
-    <a href="https://github.com/getantibody/antibody/releases">here</a>
-    and then script it somewhere:
+    Instalation is easy:
   </p>
   <pre>
     <code>
-$ mkdir /somewhere/antibody
-$ tar xzvf antibody.tar.gz -C /somewhere/antibody
-$ source /somewhere/antibody/antibody.zsh
+$ curl -s https://raw.githubusercontent.com/getantibody/installer/master/install | bash -s
+$ echo 'source <(antibody init)' >> ~/.zshrc
 $ antibody
     </code>
   </pre>
   <p>
-    On OSX (or Linux if you use linuxbrew), you can install it using a
+    On OSX (or Linux if you use linuxbrew), you can also install it using a
     <a href="https://github.com/getantibody/homebrew-antibody">homebrew tap</a>:
   </p>
   <pre>
     <code>
 $ brew tap getantibody/homebrew-antibody
 $ brew install antibody
-$ source "$(brew --prefix)/share/antibody.zsh"
+$ echo 'source <(antibody init)' >> ~/.zshrc
 $ antibody
     </code>
   </pre>
