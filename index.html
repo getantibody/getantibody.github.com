@@ -19,7 +19,9 @@
     href="//yegor256.github.io/tacit/tacit.min.css"/>
   <link rel="stylesheet" type="text/css"
     href="//cdn.jsdelivr.net/font-hack/2.010/css/hack.min.css">
-  <link rel="stylesheet" type="text/css" href="/static/index.css/">
+  <link rel="stylesheet" type="text/css"
+    href="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css">
+  <link rel="stylesheet" type="text/css" href="index.css">
 </head>
 <body>
   <img align="right" width="20%" alt="logo" src="//raw.githubusercontent.com/getantibody/antibody/master/logo.png"/>
@@ -33,11 +35,25 @@
     <iframe src="//ghbtns.com/github-btn.html?user=caarlos0&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
   </p>
   <p>
-    <script type="text/javascript" src="https://asciinema.org/a/33962.js" id="asciicast-33962" async></script>
+    <h2>How much faster, exactly?</h2>
+    <p>
+      This chart demos the times taken to load <a href="/speedtest/bundles.txt">20 libraries</a> 50 times:
+    </p>
+    <div id="chart1"></div>
+    <p>
+      Note that the first execution is slower because it is cloning all the repos.
+    </p>
+    <p>
+      Antibody is faster because it uses smarter git commands for that and can do stuff in parallel.
+    </p>
+    <p>
+      This also makes Antibody capable of saving of some disk space:
+    </p>
+    <div id="chart2"></div>
   </p>
-  <p>
-    Instalation is easy:
-  </p>
+  <h2>
+    Instalation:
+  </h2>
   <pre>
     <code>
 $ curl -s https://raw.githubusercontent.com/getantibody/installer/master/install | bash -s
@@ -57,12 +73,6 @@ $ echo 'source <(antibody init)' >> ~/.zshrc
 $ antibody
     </code>
   </pre>
-  <p>
-    You can also always find more info in the
-    <a href="https://github.com/getantibody/antibody/blob/master/README.md">
-      readme.
-    </a>
-  </p>
   <hr/>
   <p>Made with &hearts; by <a href="https://carlosbecker.com/about">@caarlos0</a>.</p>
   <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
@@ -77,6 +87,9 @@ $ antibody
     <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
     <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
   </form>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js" charset="utf-8"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
+  <script src="/chart.js" charset="utf-8"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
           (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
