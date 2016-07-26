@@ -37,19 +37,20 @@
   <p>
     <h2>How faster, exactly?</h2>
     <p>
-      This chart demos the times taken to load <a href="/speedtest/bundles.txt">20 libraries</a> 50 times:
+      First load of <a href="/speedtest/bundles.txt">20 libraries</a> (git clone and stuff):
+    </p>
+    <div id="chart2"></div>
+    <p>
+      Times taken to load the same <a href="/speedtest/bundles.txt">20 libraries</a> 49 times (after the warmup):
     </p>
     <div id="chart1"></div>
-    <p>
-      Note that the first execution is slower because it is cloning all the repos.
-    </p>
     <p>
       Antibody is faster because it uses smarter git commands for that and can do stuff in parallel.
     </p>
     <p>
       This also makes Antibody capable of saving of some disk space:
     </p>
-    <div id="chart2"></div>
+    <div id="chart3"></div>
   </p>
   <h2>
     Installation:
