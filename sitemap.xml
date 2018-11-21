@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://getantibody.github.io/intro/</loc>
+    <lastmod>2018-06-14T15:53:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/fast/</loc>
+    <lastmod>2018-06-14T15:53:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/even-faster/</loc>
+    <lastmod>2018-07-10T14:17:23-07:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/compat/</loc>
+    <lastmod>2018-10-09T14:49:09-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/install/</loc>
+    <lastmod>2018-11-05T09:49:23-02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/usage/</loc>
+    <lastmod>2018-10-05T08:57:25-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/options/</loc>
+    <lastmod>2018-10-04T10:41:21-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/update/</loc>
+    <lastmod>2018-06-26T11:43:16-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/links/</loc>
+    <lastmod>2018-06-14T15:53:33-03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/</loc>
+    <lastmod>2018-06-14T15:53:33-03:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://getantibody.github.io/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
