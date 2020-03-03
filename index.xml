@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GetAntibody</title>
+    <link>https://getantibody.github.io/</link>
+    <description>Recent content on GetAntibody</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Made with ❤️ by GetAntibody contributors.</copyright>
+    
+	<atom:link href="https://getantibody.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://getantibody.github.io/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/intro/</guid>
+      <description>Antibody is a shell plugin manager made from the ground up thinking about performance.
+It is faster because it can do things concurrently, while Antigen does it sequentially. It also has the advantage of using a compiled language instead of a scripting one.
+You can see it working in the bellow:</description>
+    </item>
+    
+    <item>
+      <title>How much faster?</title>
+      <link>https://getantibody.github.io/fast/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/fast/</guid>
+      <description>Let&amp;rsquo;s see how much faster antibody is over antigen:
+Data from getantibody/speed repository.</description>
+    </item>
+    
+    <item>
+      <title>Make it even faster</title>
+      <link>https://getantibody.github.io/even-faster/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/even-faster/</guid>
+      <description>Antibody is faster than other zsh package managers, but you might want to speed it up further.
+Highly recommended to read the following:
+ Speeding up my ZSH load - Carlos Alexandro Becker: outlines a few fixes that will speed up the prompt massively. Also explains how to debug your prompt load time. Speed up zsh compinit by only checking cache once a day.: mentioned in the previous link, but leaving this here for reference as it is helpful for anyone using zsh.</description>
+    </item>
+    
+    <item>
+      <title>Compatibility</title>
+      <link>https://getantibody.github.io/compat/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/compat/</guid>
+      <description>Since antibody started as a subset clone of antigen, one might wonder how compatible one is with another. Let&amp;rsquo;s take a look.
+Antibody can only bundle and update plugins. The apply command is not needed because running antibody bundle will already download and apply the given plugin.
+The theme command is not implemented. You can just use bundle instead.
+oh-my-zsh plugins are supported by using the path annotation:
+antibody bundle robbyrussell/oh-my-zsh path:plugins/aws </description>
+    </item>
+    
+    <item>
+      <title>Install</title>
+      <link>https://getantibody.github.io/install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/install/</guid>
+      <description>Antibody can be installed through a variety of sources.
+The simplest way is to run:
+curl -sfL git.io/antibody | sh -s - -b /usr/local/bin This will put the binary in /usr/local/bin/antibody
+You can also use homebrew (on macOS):
+brew install getantibody/tap/antibody Or even using AUR on Arch Linux.
+You can also always download and install manually via tar.gz archives or using dpkg and our deb archives. Just head to the releases page and chose your poison.</description>
+    </item>
+    
+    <item>
+      <title>Usage</title>
+      <link>https://getantibody.github.io/usage/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/usage/</guid>
+      <description>There are mainly two ways of using antibody: static and dynamic. We will also see how we can keep a plugins file.
+Plugins file A plugin file is basically any text file that has one plugin per line.
+In our examples, let&amp;rsquo;s assume we have a ~/.zsh_plugins.txt with these contents:
+caarlos0/jvm djui/alias-tips # comments are supported like this caarlos0/zsh-mkc zsh-users/zsh-completions caarlos0/zsh-open-github-pr # empty lines are skipped # annotations are also allowed: robbyrussell/oh-my-zsh path:plugins/aws zsh-users/zsh-syntax-highlighting zsh-users/zsh-history-substring-search That being said, let&amp;rsquo;s look how can we load them!</description>
+    </item>
+    
+    <item>
+      <title>Options</title>
+      <link>https://getantibody.github.io/options/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/options/</guid>
+      <description>There are a few options you can use that should cover most common use cases. Let&amp;rsquo;s take a look!
+Kind The kind annotation can be used to determine how a bundle should be treated.
+zsh The default is kind:zsh, which will look for files that match these globs:
+ *.plugin.zsh *.zsh *.sh *.zsh-theme  And source them.
+Example:
+$ antibody bundle caarlos0/jvm kind:zsh source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-jvm/jvm.plugin.zsh path The kind:path mode will just put the plugin folder in your $PATH.</description>
+    </item>
+    
+    <item>
+      <title>Outro</title>
+      <link>https://getantibody.github.io/update/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/update/</guid>
+      <description>Let&amp;rsquo;s look what other commands antibody has available for us!
+Update Antibody can update all bundles in a single pass.
+Just run:
+$ antibody update Updating all bundles in /Users/carlos/Library/Caches/antibody... and that&amp;rsquo;s it.
+Purge You can remove a bundle completely by purging it:
+$ antibody purge robbyrussell/oh-my-zsh Removing robbyrussell/oh-my-zsh... List If you want to see what plugins you have in your home folder, you can of course list them:
+$ antibody list https://github.</description>
+    </item>
+    
+    <item>
+      <title>Links</title>
+      <link>https://getantibody.github.io/links/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://getantibody.github.io/links/</guid>
+      <description>Follow the progress on the GitHub repository Follow @caarlos0 on Twitter for updates Contributing Guidelines  This project adheres to the Contributor Covenant code of conduct. By participating, you are expected to uphold this code.</description>
+    </item>
+    
+  </channel>
+</rss>

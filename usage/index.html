@@ -1,0 +1,182 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Usage &middot; GetAntibody</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<meta http-equiv="content-language" content="en-us" />
+		<meta name="generator" content="Hugo 0.65.3" />
+		<link rel="stylesheet" href="https://getantibody.github.io/css/index.css">
+		<link rel="apple-touch-icon" href="https://getantibody.github.io/apple-touch-icon.png">
+		<link rel="shortcut icon" href="https://getantibody.github.io/favicon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<div class="Wrapper">
+			<div class="Container">
+				<div class="Header">
+  <a href="https://getantibody.github.io/">
+	<div class="Title center">
+		
+			<img alt="GetAntibody Logo" src="https://avatars2.githubusercontent.com/u/16625397?v=3&amp;s=140" height="140" />
+		
+		<span class="text">GetAntibody</span>
+		<span class="subtext"></span>
+	</div>
+  </a>
+</div>
+
+				<div class="Content-wrapper">
+					<div class="Sidebar">
+	<div class="Menu">
+		<div class="item">
+			<a href="https://getantibody.github.io/">Home</a>
+		</div>
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/intro/">Introduction</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/fast/">How much faster?</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/even-faster/">Make it even faster</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/compat/">Compatibility</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/install/">Install</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/usage/">Usage</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/options/">Options</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/update/">Outro</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/links/">Links</a>
+				</div>
+			
+		
+			
+		
+			
+		
+			
+		
+	</div>
+</div>
+
+					<div class="Content">
+						
+	<div class="Page" id="">
+		<h1>Usage</h1>
+		<p>There are mainly two ways of using antibody: static and dynamic.
+We will also see how we can keep a plugins file.</p>
+<h2 id="plugins-file">Plugins file</h2>
+<p>A plugin file is basically any text file that has one plugin per line.</p>
+<p>In our examples, let&rsquo;s assume we have a <code>~/.zsh_plugins.txt</code> with these
+contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">caarlos0/jvm
+djui/alias-tips
+<span style="color:#6272a4"># comments are supported like this</span>
+caarlos0/zsh-mkc
+zsh-users/zsh-completions
+caarlos0/zsh-open-github-pr
+
+<span style="color:#6272a4"># empty lines are skipped</span>
+
+<span style="color:#6272a4"># annotations are also allowed:</span>
+robbyrussell/oh-my-zsh path:plugins/aws
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+</code></pre></div><p>That being said, let&rsquo;s look how can we load them!</p>
+<h2 id="dynamic-loading">Dynamic loading</h2>
+<p>This is the most common way. Basically, every time the a new shell starts,
+antibody will apply the plugins given to it.</p>
+<p>For this to work, antibody needs to be wrapped into your <code>~/.zshrc</code>. To do
+that, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+<span style="color:#8be9fd;font-style:italic">source</span> &lt;<span style="color:#ff79c6">(</span>antibody init<span style="color:#ff79c6">)</span>
+</code></pre></div><p>And reload your current shell or open a new one.</p>
+<p>Then, you will also need to tell antibody which plugins to bundle.
+This can also be done in the <code>~/.zshrc</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+antibody bundle &lt; ~/.zsh_plugins.txt
+</code></pre></div><h2 id="static-loading">Static loading</h2>
+<p>This is the faster alternative. Basically, you&rsquo;ll run antibody only when
+you change your plugins, and then you can just load the &ldquo;static&rdquo; plugins file.</p>
+<p>Note that in this case, <strong>we should not put <code>antibody init</code> on our <code>~/.zshrc</code></strong>.
+If you did that already, remove it from your <code>~/.zshrc</code> and start a fresh
+terminal session.</p>
+<p>Assuming the same <code>~/.zsh_plugins.txt</code> as before, we can run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">antibody bundle &lt; ~/.zsh_plugins.txt &gt; ~/.zsh_plugins.sh
+</code></pre></div><p>At any time to update our <code>~/.zsh_plugins.sh</code> file. Now, we just need to
+<code>source</code> that file on <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+<span style="color:#8be9fd;font-style:italic">source</span> ~/.zsh_plugins.sh
+</code></pre></div><p>And that&rsquo;s it!</p>
+<h2 id="cleanmymac-and-others">CleanMyMac and others</h2>
+<p>If you use CleanMyMac or similar tools, make sure to set it up to ignore the
+<code>antibody home</code> folder, otherwise it may delete your plugins.</p>
+<p>You may also change Antibody&rsquo;s home folder, for example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">ANTIBODY_HOME</span><span style="color:#ff79c6">=</span>~/Libary/antibody
+</code></pre></div><blockquote><p>Last updated by Carlos Alexandro Becker on October 5, 2018.</p></blockquote></div>
+
+						<div class="Footer">
+	<p>Made with ❤️ by GetAntibody contributors.</p>
+</div>
+<script src="https://getantibody.github.io/js/index.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-68164063-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
