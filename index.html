@@ -1,0 +1,378 @@
+
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>GetAntibody</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		
+		<meta http-equiv="content-language" content="en-us" />
+		<meta name="generator" content="Hugo 0.76.0" />
+		<link rel="stylesheet" href="https://getantibody.github.io/css/index.css">
+		<link rel="apple-touch-icon" href="https://getantibody.github.io/apple-touch-icon.png">
+		<link rel="shortcut icon" href="https://getantibody.github.io/favicon.ico" type="image/x-icon">
+	</head>
+
+	<body>
+		<div class="Wrapper">
+			<div class="Container">
+				<div class="Header">
+  <a href="https://getantibody.github.io/">
+	<div class="Title center">
+		
+			<img alt="GetAntibody Logo" src="https://avatars2.githubusercontent.com/u/16625397?v=3&amp;s=140" height="140" />
+		
+		<span class="text">GetAntibody</span>
+		<span class="subtext"></span>
+	</div>
+  </a>
+</div>
+
+				<div class="Content-wrapper">
+					<div class="Sidebar">
+	<div class="Menu">
+		<div class="item">
+			<a href="https://getantibody.github.io/">Home</a>
+		</div>
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/intro/">Introduction</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/fast/">How much faster?</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/even-faster/">Make it even faster</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/compat/">Compatibility</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/install/">Install</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/usage/">Usage</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/options/">Options</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/update/">Outro</a>
+				</div>
+			
+		
+			
+				<div class="item">
+					<a href="https://getantibody.github.io/links/">Links</a>
+				</div>
+			
+		
+			
+		
+			
+		
+			
+		
+	</div>
+</div>
+
+					<div class="Content">
+						
+	
+	
+		
+			<div class="Page" id="Introduction">
+				<h1><a href="https://getantibody.github.io/intro/">Introduction</a></h1>
+				<p>Antibody is a shell plugin manager made from the ground up thinking about
+performance.</p>
+<p>It is faster because it can do things concurrently, while Antigen does it
+sequentially. It also has the advantage of using a compiled language instead
+of a scripting one.</p>
+<p>You can see it working in the below example:</p>
+<!-- raw HTML omitted -->
+
+		</div>
+		
+	
+		
+			<div class="Page" id="How much faster?">
+				<h1><a href="https://getantibody.github.io/fast/">How much faster?</a></h1>
+				<p>Let&rsquo;s see how much faster antibody is over antigen:</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Data from <a href="https://github.com/getantibody/speed">getantibody/speed</a> repository.</p>
+
+		</div>
+		
+	
+		
+			<div class="Page" id="Make it even faster">
+				<h1><a href="https://getantibody.github.io/even-faster/">Make it even faster</a></h1>
+				<p>Antibody is faster than other zsh package managers, but you might want to speed it up further.</p>
+<p>Highly recommended to read the following:</p>
+<ul>
+<li><a href="https://carlosbecker.com/posts/speeding-up-zsh/">Speeding up my ZSH load - Carlos Alexandro Becker</a>: outlines a few fixes that will speed up the prompt massively. Also explains how to debug your prompt load time.</li>
+<li><a href="https://gist.github.com/ctechols/ca1035271ad134841284">Speed up zsh compinit by only checking cache once a day.</a>: mentioned in the previous link, but leaving this here for reference as it is helpful for anyone using zsh.</li>
+<li><a href="http://jb-blog.readthedocs.io/en/latest/posts/0032-debugging-zsh-startup-time.html">How to debug zsh startup time — JB on programming 1.0.0 documentation</a></li>
+</ul>
+
+		</div>
+		
+	
+		
+			<div class="Page" id="Compatibility">
+				<h1><a href="https://getantibody.github.io/compat/">Compatibility</a></h1>
+				<p>Since antibody started as a subset clone of antigen, one might wonder
+how compatible one is with another. Let&rsquo;s take a look.</p>
+<p>Antibody can only <code>bundle</code> and <code>update</code> plugins. The <code>apply</code> command is not
+needed because running <code>antibody bundle</code> will already download and apply the
+given plugin.</p>
+<p>The <code>theme</code> command is not implemented. You can just use <code>bundle</code> instead.</p>
+<p>oh-my-zsh plugins are supported by using the <a href="#options.path"><code>path</code> annotation</a>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">antibody bundle ohmyzsh/ohmyzsh path:plugins/aws
+</code></pre></div>
+		</div>
+		
+	
+		
+			<div class="Page" id="Install">
+				<h1><a href="https://getantibody.github.io/install/">Install</a></h1>
+				<p>Antibody can be installed through a variety of sources.</p>
+<p>The simplest way is to run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">curl -sfL git.io/antibody | sh -s - -b /usr/local/bin
+</code></pre></div><p>This will put the binary in <code>/usr/local/bin/antibody</code></p>
+<p>You can also use homebrew (on macOS):</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">brew install antibody
+</code></pre></div><p>Or even using <a href="https://aur.archlinux.org/packages/antibody/">AUR</a> on Arch Linux.</p>
+<p>You can also always download and install manually via tar.gz archives or
+using dpkg and our deb archives. Just head to the
+<a href="https://github.com/getantibody/antibody/releases">releases page</a> and chose
+your poison.</p>
+
+		</div>
+		
+	
+		
+			<div class="Page" id="Usage">
+				<h1><a href="https://getantibody.github.io/usage/">Usage</a></h1>
+				<p>There are mainly two ways of using antibody: static and dynamic.
+We will also see how we can keep a plugins file.</p>
+<h2 id="plugins-file">Plugins file</h2>
+<p>A plugin file is basically any text file that has one plugin per line.</p>
+<p>In our examples, let&rsquo;s assume we have a <code>~/.zsh_plugins.txt</code> with these
+contents:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">caarlos0/jvm
+djui/alias-tips
+<span style="color:#6272a4"># comments are supported like this</span>
+caarlos0/zsh-mkc
+zsh-users/zsh-completions
+caarlos0/zsh-open-github-pr
+
+<span style="color:#6272a4"># empty lines are skipped</span>
+
+<span style="color:#6272a4"># annotations are also allowed:</span>
+ohmyzsh/ohmyzsh path:plugins/aws
+
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-history-substring-search
+</code></pre></div><p>That being said, let&rsquo;s look how can we load them!</p>
+<h2 id="dynamic-loading">Dynamic loading</h2>
+<p>This is the most common way. Basically, every time the a new shell starts,
+antibody will apply the plugins given to it.</p>
+<p>For this to work, antibody needs to be wrapped into your <code>~/.zshrc</code>. To do
+that, run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+<span style="color:#8be9fd;font-style:italic">source</span> &lt;<span style="color:#ff79c6">(</span>antibody init<span style="color:#ff79c6">)</span>
+</code></pre></div><p>And reload your current shell or open a new one.</p>
+<p>Then, you will also need to tell antibody which plugins to bundle.
+This can also be done in the <code>~/.zshrc</code> file:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+antibody bundle &lt; ~/.zsh_plugins.txt
+</code></pre></div><h2 id="static-loading">Static loading</h2>
+<p>This is the faster alternative. Basically, you&rsquo;ll run antibody only when
+you change your plugins, and then you can just load the &ldquo;static&rdquo; plugins file.</p>
+<p>Note that in this case, <strong>we should not put <code>antibody init</code> on our <code>~/.zshrc</code></strong>.
+If you did that already, remove it from your <code>~/.zshrc</code> and start a fresh
+terminal session.</p>
+<p>Assuming the same <code>~/.zsh_plugins.txt</code> as before, we can run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">antibody bundle &lt; ~/.zsh_plugins.txt &gt; ~/.zsh_plugins.sh
+</code></pre></div><p>At any time to update our <code>~/.zsh_plugins.sh</code> file. Now, we just need to
+<code>source</code> that file on <code>~/.zshrc</code>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#6272a4"># ~/.zshrc</span>
+<span style="color:#8be9fd;font-style:italic">source</span> ~/.zsh_plugins.sh
+</code></pre></div><p>And that&rsquo;s it!</p>
+<h2 id="cleanmymac-and-others">CleanMyMac and others</h2>
+<p>If you use CleanMyMac or similar tools, make sure to set it up to ignore the
+<code>antibody home</code> folder, otherwise it may delete your plugins.</p>
+<p>You may also change Antibody&rsquo;s home folder, for example:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">ANTIBODY_HOME</span><span style="color:#ff79c6">=</span>~/Libary/antibody
+</code></pre></div>
+		</div>
+		
+	
+		
+			<div class="Page" id="Options">
+				<h1><a href="https://getantibody.github.io/options/">Options</a></h1>
+				<p>There are a few options you can use that should cover most common use cases.
+Let&rsquo;s take a look!</p>
+<h2 id="kind">Kind</h2>
+<p>The <code>kind</code> annotation can be used to determine how a bundle should be treated.</p>
+<h3 id="zsh">zsh</h3>
+<p>The default is <code>kind:zsh</code>, which will look for files that match these globs:</p>
+<ul>
+<li><code>*.plugin.zsh</code></li>
+<li><code>*.zsh</code></li>
+<li><code>*.sh</code></li>
+<li><code>*.zsh-theme</code></li>
+</ul>
+<p>And <code>source</code> them.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle caarlos0/jvm kind:zsh
+source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-jvm/jvm.plugin.zsh
+</code></pre><h3 id="path">path</h3>
+<p>The <code>kind:path</code> mode will just put the plugin folder in your <code>$PATH</code>.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle caarlos0/ports kind:path
+export PATH=&quot;/Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-ports:$PATH&quot;
+</code></pre><h3 id="fpath">fpath</h3>
+<p>The <code>kind:fpath</code> only puts the plugin folder on the <code>fpath</code>, doing nothing else.
+It can be specially useful for completion scripts that won&rsquo;t allow to be
+sourced.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle Linuxbrew/brew path:completions/zsh kind:fpath
+fpath+=( /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-Linuxbrew-SLASH-brew/completions/zsh )
+</code></pre><h3 id="clone">clone</h3>
+<p>The <code>kind:clone</code> only gets the plugin, doing nothing else. It can be useful for
+managing a package that isn&rsquo;t directly used as a shell plugin.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle mbadolato/iTerm2-Color-Schemes kind:clone
+</code></pre><h2 id="branch">Branch</h2>
+<p>You can also specify a branch to download, if you don&rsquo;t want the <code>master</code> branch
+for whatever reason.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle caarlos0/jvm branch:v2
+source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-jvm/jvm.plugin.zsh
+</code></pre><h2 id="path-1">Path</h2>
+<p>You may specify a subfolder or a specific file if the repo you are bundling
+contains multiple plugins.</p>
+<p>Example:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle ohmyzsh/ohmyzsh path:plugins/aws
+source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/aws/aws.plugin.zsh
+fpath+=( /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/aws )
+</code></pre><p>If you want multiple paths within from the same plugin, you can just repeat the
+plugin with a different <code>path</code> option:</p>
+<pre><code class="language-console" data-lang="console">$ antibody bundle &quot;ohmyzsh/ohmyzsh path:plugins/aws/aws.plugin.zsh
+  ohmyzsh/ohmyzsh path:plugins/asdf&quot;
+source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/aws/aws.plugin.zsh
+fpath+=( /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/aws )
+source /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/asdf/asdf.plugin.zsh
+fpath+=( /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh/plugins/asdf )
+</code></pre>
+		</div>
+		
+	
+		
+			<div class="Page" id="Outro">
+				<h1><a href="https://getantibody.github.io/update/">Outro</a></h1>
+				<p>Let&rsquo;s look what other commands antibody has available for us!</p>
+<h2 id="update">Update</h2>
+<p>Antibody can update all bundles in a single pass.</p>
+<p>Just run:</p>
+<pre><code class="language-console" data-lang="console">$ antibody update
+Updating all bundles in /Users/carlos/Library/Caches/antibody...
+</code></pre><p>and that&rsquo;s it.</p>
+<h2 id="purge">Purge</h2>
+<p>You can remove a bundle completely by purging it:</p>
+<pre><code class="language-console" data-lang="console">$ antibody purge ohmyzsh/ohmyzsh
+Removing ohmyzsh/ohmyzsh...
+</code></pre><h2 id="list">List</h2>
+<p>If you want to see what plugins you have in your home folder, you can of
+course list them:</p>
+<pre><code class="language-console" data-lang="console">$ antibody list
+https://github.com/Tarrasch/zsh-bd            /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-Tarrasch-SLASH-zsh-bd
+https://github.com/caarlos0/git-add-remote    /Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-caarlos0-SLASH-git-add-remote
+# ...
+</code></pre><h2 id="path">Path</h2>
+<p>You can see the path being used for a cloned bundle.</p>
+<pre><code class="language-console" data-lang="console">$ antibody path ohmyzsh/ohmyzsh
+/Users/carlos/Library/Caches/antibody/https-COLON--SLASH--SLASH-github.com-SLASH-ohmyzsh-SLASH-ohmyzsh
+</code></pre><p>This is particularly useful for projects like oh-my-zsh that rely on
+storing its path in the <code>$ZSH</code> environment variable:</p>
+<pre><code class="language-console" data-lang="console">$ ZSH=$(antibody path ohmyzsh/ohmyzsh)
+</code></pre><h2 id="home">Home</h2>
+<p>You can also see where antibody is keeping the plugins with the home
+command:</p>
+<pre><code class="language-console" data-lang="console">$ antibody home
+/Users/carlos/Library/Caches/antibody
+</code></pre><p>Of course, you can remove the entire thing with:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm -rf <span style="color:#f1fa8c">`</span>antibody home<span style="color:#f1fa8c">`</span>
+</code></pre></div><p>if you decide to start fresh or to use something else.</p>
+
+		</div>
+		
+	
+		
+			<div class="Page" id="Links">
+				<h1><a href="https://getantibody.github.io/links/">Links</a></h1>
+				<ul>
+<li>Follow the progress on the <a href="https://github.com/getantibody/antibody">GitHub repository</a></li>
+<li>Follow <a href="https://twitter.com/caarlos0">@caarlos0</a> on Twitter for updates</li>
+<li><a href="https://github.com/getantibody/antibody/blob/master/CONTRIBUTING.md">Contributing Guidelines</a></li>
+</ul>
+<p>This project adheres to the Contributor Covenant
+<a href="https://github.com/getantibody/antibody/blob/master/CODE_OF_CONDUCT.md">code of conduct</a>.
+By participating, you are expected to uphold this code.</p>
+
+		</div>
+		
+	
+
+						<div class="Footer">
+	<p>Made with ❤️ by GetAntibody contributors.</p>
+</div>
+<script src="https://getantibody.github.io/js/index.js"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-68164063-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+					</div>
+				</div>
+		</div>
+	</body>
+</html>
